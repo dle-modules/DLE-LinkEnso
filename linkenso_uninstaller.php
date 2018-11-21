@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+п»ї<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Удаление модуля LinkEnso PRO</title>
+        <title>РЈРґР°Р»РµРЅРёРµ РјРѕРґСѓР»СЏ LinkEnso PRO</title>
         <link rel="stylesheet" type="text/css" href="http://store.alaev.info/style.css" />
         <style type="text/css">
             #header {width: 100%; text-align: center;}
@@ -36,54 +36,54 @@
 
     function module_uninstaller()
     {
-        // Стандартный текст
-        $output = '<h2>Добро пожаловать в скрипт для удаления модуля LinkEnso PRO!</h2>';
-        $output .= '<p><strong>Внимание!</strong> После удаления модуля <strong>обязательно</strong> удалите файл <strong>linkenso_uninstaller.php</strong> с Вашего сервера!</p>';
+        // РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С‚РµРєСЃС‚
+        $output = '<h2>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ СЃРєСЂРёРїС‚ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РјРѕРґСѓР»СЏ LinkEnso PRO!</h2>';
+        $output .= '<p><strong>Р’РЅРёРјР°РЅРёРµ!</strong> РџРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ РјРѕРґСѓР»СЏ <strong>РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ</strong> СѓРґР°Р»РёС‚Рµ С„Р°Р№Р» <strong>linkenso_uninstaller.php</strong> СЃ Р’Р°С€РµРіРѕ СЃРµСЂРІРµСЂР°!</p>';
         $output .= '<p>';
-        $output .= '<strong>Кроме того, необходимо удалить следующие файлы и папки:</strong>';
+        $output .= '<strong>РљСЂРѕРјРµ С‚РѕРіРѕ, РЅРµРѕР±С…РѕРґРёРјРѕ СѓРґР°Р»РёС‚СЊ СЃР»РµРґСѓСЋС‰РёРµ С„Р°Р№Р»С‹ Рё РїР°РїРєРё:</strong>';
         $output .= '<ul>';
             $output .= '<li>/engine/modules/<strong>linkenso.php</strong></li>';
             $output .= '<li>/engine/inc/<strong>linkenso.php</strong></li>';
             $output .= '<li>/engine/skins/images/<strong>linkenso.png</strong></li>';
-            $output .= '<li>/templates/<em>Имя Вашего Шаблона</em>/<strong>linkenso/</strong></li>';
+            $output .= '<li>/templates/<em>РРјСЏ Р’Р°С€РµРіРѕ РЁР°Р±Р»РѕРЅР°</em>/<strong>linkenso/</strong></li>';
         $output .= '</ul>';
         $output .= '</p>';
 
-        // Если через $_POST передаётся параметр linkenso_uninstall, производим инсталляцию, согласно параметрам
+        // Р•СЃР»Рё С‡РµСЂРµР· $_POST РїРµСЂРµРґР°С‘С‚СЃСЏ РїР°СЂР°РјРµС‚СЂ linkenso_uninstall, РїСЂРѕРёР·РІРѕРґРёРј РёРЅСЃС‚Р°Р»Р»СЏС†РёСЋ, СЃРѕРіР»Р°СЃРЅРѕ РїР°СЂР°РјРµС‚СЂР°Рј
         if(!empty($_POST['linkenso_uninstall']))
         {
-            // Подключаем config
+            // РџРѕРґРєР»СЋС‡Р°РµРј config
             include_once ('engine/data/config.php');
 
-            // Подключаем DLE API
+            // РџРѕРґРєР»СЋС‡Р°РµРј DLE API
             include ('engine/api/api.class.php');
 
-            // Удаляем модуль из админки
+            // РЈРґР°Р»СЏРµРј РјРѕРґСѓР»СЊ РёР· Р°РґРјРёРЅРєРё
             $dle_api->uninstall_admin_module('linkenso');
 
-            // Вывод
+            // Р’С‹РІРѕРґ
             $output .= '<p>';
-            $output .= 'Модуль успешно удалён!';
+            $output .= 'РњРѕРґСѓР»СЊ СѓСЃРїРµС€РЅРѕ СѓРґР°Р»С‘РЅ!';
             $output .= '</p>';
         }
 
-        // Если через $_POST ничего не передаётся, выводим форму для удаления модуля
+        // Р•СЃР»Рё С‡РµСЂРµР· $_POST РЅРёС‡РµРіРѕ РЅРµ РїРµСЂРµРґР°С‘С‚СЃСЏ, РІС‹РІРѕРґРёРј С„РѕСЂРјСѓ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ РјРѕРґСѓР»СЏ
         else
         {
-            // Вывод
+            // Р’С‹РІРѕРґ
             $output .= '<p>';
             $output .= '<form method="POST" action="linkenso_uninstaller.php">';
             $output .= '<input type="hidden" name="linkenso_uninstall" value="1" />';
-            $output .= '<input type="submit" value="Удалить модуль" />';
+            $output .= '<input type="submit" value="РЈРґР°Р»РёС‚СЊ РјРѕРґСѓР»СЊ" />';
             $output .= '</form>';
             $output .= '</p>';
         }
         
         $output .= '<p>';
-        $output .= '<a href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">разработка и поддержка модуля</a>';
+        $output .= '<a href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">СЂР°Р·СЂР°Р±РѕС‚РєР° Рё РїРѕРґРґРµСЂР¶РєР° РјРѕРґСѓР»СЏ</a>';
         $output .= '</p>';
 
-        // Функция возвращает то, что должно быть выведено
+        // Р¤СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ С‚Рѕ, С‡С‚Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РІС‹РІРµРґРµРЅРѕ
         return $output;
     }
 
