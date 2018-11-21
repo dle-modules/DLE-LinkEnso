@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+п»ї<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Установка модуля LinkEnso</title>
+        <title>РЈСЃС‚Р°РЅРѕРІРєР° РјРѕРґСѓР»СЏ LinkEnso</title>
         <link rel="stylesheet" type="text/css" href="http://store.alaev.info/style.css" />
         <style type="text/css">
             #header {width: 100%; text-align: center;}
@@ -37,46 +37,46 @@
 
     function module_installer()
     {
-        // Стандартный текст
-        $output = '<h2>Добро пожаловать в установщик модуля LinkEnso!</h2>';
+        // РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ С‚РµРєСЃС‚
+        $output = '<h2>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ СѓСЃС‚Р°РЅРѕРІС‰РёРє РјРѕРґСѓР»СЏ LinkEnso!</h2>';
         $output .= '<img class="module_image" src="/engine/skins/images/linkenso.png" />';
-        $output .= '<p><strong>Внимание!</strong> После установки модуля <strong>обязательно</strong> удалите файл <strong>linkenso_installer.php</strong> с Вашего сервера!</p>';
+        $output .= '<p><strong>Р’РЅРёРјР°РЅРёРµ!</strong> РџРѕСЃР»Рµ СѓСЃС‚Р°РЅРѕРІРєРё РјРѕРґСѓР»СЏ <strong>РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ</strong> СѓРґР°Р»РёС‚Рµ С„Р°Р№Р» <strong>linkenso_installer.php</strong> СЃ Р’Р°С€РµРіРѕ СЃРµСЂРІРµСЂР°!</p>';
 
-        // Если через $_POST передаётся параметр linkenso_install, производим инсталляцию, согласно параметрам
+        // Р•СЃР»Рё С‡РµСЂРµР· $_POST РїРµСЂРµРґР°С‘С‚СЃСЏ РїР°СЂР°РјРµС‚СЂ linkenso_install, РїСЂРѕРёР·РІРѕРґРёРј РёРЅСЃС‚Р°Р»Р»СЏС†РёСЋ, СЃРѕРіР»Р°СЃРЅРѕ РїР°СЂР°РјРµС‚СЂР°Рј
         if(!empty($_POST['linkenso_install']))
         {
-            // Подключаем config
+            // РџРѕРґРєР»СЋС‡Р°РµРј config
             include_once ('engine/data/config.php');
 
-            // Подключаем DLE API
+            // РџРѕРґРєР»СЋС‡Р°РµРј DLE API
             include ('engine/api/api.class.php');
 
-            // Устанавливаем модуль в админку
-            $dle_api->install_admin_module('linkenso', 'LinkEnso - модуль для организации кольцевой прелинковки', 'Модуль позволяет создать на сайте кольцевую перелинковку новостей с учетом их тематики', 'linkenso.png');
+            // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РјРѕРґСѓР»СЊ РІ Р°РґРјРёРЅРєСѓ
+            $dle_api->install_admin_module('linkenso', 'LinkEnso - РјРѕРґСѓР»СЊ РґР»СЏ РѕСЂРіР°РЅРёР·Р°С†РёРё РєРѕР»СЊС†РµРІРѕР№ РїСЂРµР»РёРЅРєРѕРІРєРё', 'РњРѕРґСѓР»СЊ РїРѕР·РІРѕР»СЏРµС‚ СЃРѕР·РґР°С‚СЊ РЅР° СЃР°Р№С‚Рµ РєРѕР»СЊС†РµРІСѓСЋ РїРµСЂРµР»РёРЅРєРѕРІРєСѓ РЅРѕРІРѕСЃС‚РµР№ СЃ СѓС‡РµС‚РѕРј РёС… С‚РµРјР°С‚РёРєРё', 'linkenso.png');
 
-            // Вывод
+            // Р’С‹РІРѕРґ
             $output .= '<p>';
-            $output .= 'Модуль успешно установлен! Спасибо за Ваш выбор! Приятной работы!';
+            $output .= 'РњРѕРґСѓР»СЊ СѓСЃРїРµС€РЅРѕ СѓСЃС‚Р°РЅРѕРІР»РµРЅ! РЎРїР°СЃРёР±Рѕ Р·Р° Р’Р°С€ РІС‹Р±РѕСЂ! РџСЂРёСЏС‚РЅРѕР№ СЂР°Р±РѕС‚С‹!';
             $output .= '</p>';
         }
 
-        // Если через $_POST ничего не передаётся, выводим форму для установки модуля
+        // Р•СЃР»Рё С‡РµСЂРµР· $_POST РЅРёС‡РµРіРѕ РЅРµ РїРµСЂРµРґР°С‘С‚СЃСЏ, РІС‹РІРѕРґРёРј С„РѕСЂРјСѓ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РјРѕРґСѓР»СЏ
         else
         {
-            // Вывод
+            // Р’С‹РІРѕРґ
             $output .= '<p>';
             $output .= '<form method="POST" action="linkenso_installer.php">';
             $output .= '<input type="hidden" name="linkenso_install" value="1" />';
-            $output .= '<input type="submit" value="Установить модуль" />';
+            $output .= '<input type="submit" value="РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РјРѕРґСѓР»СЊ" />';
             $output .= '</form>';
             $output .= '</p>';
         }
         
         $output .= '<p>';
-        $output .= '<a href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">разработка и поддержка модуля</a>';
+        $output .= '<a href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">СЂР°Р·СЂР°Р±РѕС‚РєР° Рё РїРѕРґРґРµСЂР¶РєР° РјРѕРґСѓР»СЏ</a>';
         $output .= '</p>';
 
-        // Функция возвращает то, что должно быть выведено
+        // Р¤СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ С‚Рѕ, С‡С‚Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РІС‹РІРµРґРµРЅРѕ
         return $output;
     }
 

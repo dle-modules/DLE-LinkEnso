@@ -1,25 +1,25 @@
-<?php
+п»ї<?php
 
 /*
 =============================================================================
- Файл: linkenso.php (backend) версия 2.3
+ Р¤Р°Р№Р»: linkenso.php (backend) РІРµСЂСЃРёСЏ 2.3
 -----------------------------------------------------------------------------
- Автор: Фомин Александр Алексеевич, mail@mithrandir.ru
+ РђРІС‚РѕСЂ: Р¤РѕРјРёРЅ РђР»РµРєСЃР°РЅРґСЂ РђР»РµРєСЃРµРµРІРёС‡, mail@mithrandir.ru
 -----------------------------------------------------------------------------
- Помощь: ПафНутиЙ, pafnuty10@gmail.com, http://pafnuty.name
+ РџРѕРјРѕС‰СЊ: РџР°С„РќСѓС‚РёР™, pafnuty10@gmail.com, http://pafnuty.name
 -----------------------------------------------------------------------------
- Сайт поддержки: http://alaev.info/blog/post/3982
+ РЎР°Р№С‚ РїРѕРґРґРµСЂР¶РєРё: http://alaev.info/blog/post/3982
 -----------------------------------------------------------------------------
- Назначение: генератор кода для вставки модуля в шаблон fullstory.tpl
+ РќР°Р·РЅР°С‡РµРЅРёРµ: РіРµРЅРµСЂР°С‚РѕСЂ РєРѕРґР° РґР»СЏ РІСЃС‚Р°РІРєРё РјРѕРґСѓР»СЏ РІ С€Р°Р±Р»РѕРЅ fullstory.tpl
 =============================================================================
 */
 
-    // Антихакер
+    // РђРЅС‚РёС…Р°РєРµСЂ
     if( !defined( 'DATALIFEENGINE' ) OR !defined( 'LOGGED_IN' ) ) {
             die( "Hacking attempt!" );
     }
 
-    echoheader('LinkEnso PRO', 'Модуль кольцевой перелинковки');
+    echoheader('LinkEnso PRO', 'РњРѕРґСѓР»СЊ РєРѕР»СЊС†РµРІРѕР№ РїРµСЂРµР»РёРЅРєРѕРІРєРё');
         echo '
 
 '.($config['version_id'] >= 10.2 ? '<style>.uniform, div.selector {min-width: 250px;}</style>' : '<style>
@@ -40,7 +40,7 @@ font-size: 12px;
 -o-border-radius: 0;
 border-radius: 0;
 background: whitesmoke;
-background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
+background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiвЂ¦pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
 background-size: 100%;
 background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
 background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
@@ -61,10 +61,10 @@ color: #666;
 <div class="box">
 
 	<div class="box-header">
-		<div class="title">Генератор кода для вставки модуля</div>
+		<div class="title">Р“РµРЅРµСЂР°С‚РѕСЂ РєРѕРґР° РґР»СЏ РІСЃС‚Р°РІРєРё РјРѕРґСѓР»СЏ</div>
 		<ul class="box-toolbar">
 			<li class="toolbar-link">
-			<a target="_blank" href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">LinkEnso PRO v.2.3 © 2014 Блог АлаичЪ\'а - разработка и поддержка модуля</a>
+			<a target="_blank" href="http://alaev.info/blog/post/3982?from=LinkEnsoPro">LinkEnso PRO v.2.3 В© 2014 Р‘Р»РѕРі РђР»Р°РёС‡РЄ\'Р° - СЂР°Р·СЂР°Р±РѕС‚РєР° Рё РїРѕРґРґРµСЂР¶РєР° РјРѕРґСѓР»СЏ</a>
 			</li>
 		</ul>
 	</div>
@@ -73,67 +73,67 @@ color: #666;
 	<table class="table table-normal">
 	<tbody>
 		<tr>
-		<td class="col-xs-6"><h5>Шаблон блока:</h5><span class="note large">Название шаблона, через который будет выведен блок с ссылками (не обязательно).<br />Расширение .tpl указывать не нужно!</span></td>
+		<td class="col-xs-6"><h5>РЁР°Р±Р»РѕРЅ Р±Р»РѕРєР°:</h5><span class="note large">РќР°Р·РІР°РЅРёРµ С€Р°Р±Р»РѕРЅР°, С‡РµСЂРµР· РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РІС‹РІРµРґРµРЅ Р±Р»РѕРє СЃ СЃСЃС‹Р»РєР°РјРё (РЅРµ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ).<br />Р Р°СЃС€РёСЂРµРЅРёРµ .tpl СѓРєР°Р·С‹РІР°С‚СЊ РЅРµ РЅСѓР¶РЅРѕ!</span></td>
 		<td class="col-xs-6 settingstd"><input class="uniform" type="text" name="linkenso_template" id="linkenso_template" placeholder="linkenso/linkenso" /></td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Количество ссылок:</h5><span class="note large">Общее количество ссылок, выводимых модулем.</span></td>
+		<td class="col-xs-6"><h5>РљРѕР»РёС‡РµСЃС‚РІРѕ СЃСЃС‹Р»РѕРє:</h5><span class="note large">РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃСЃС‹Р»РѕРє, РІС‹РІРѕРґРёРјС‹С… РјРѕРґСѓР»РµРј.</span></td>
 		<td class="col-xs-6 settingstd"><input class="uniform" type="text" name="linkenso_links" id="linkenso_links" value="3" /></td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Какие новости показывать:</h5><span class="note large"><strong>Предыдущие публикации</strong> - в ссылках будут выводиться предыдущие новости.<br /><strong>Свежие публикации</strong> - в ссылках будут выводиться свежие новости.</span></td>
+		<td class="col-xs-6"><h5>РљР°РєРёРµ РЅРѕРІРѕСЃС‚Рё РїРѕРєР°Р·С‹РІР°С‚СЊ:</h5><span class="note large"><strong>РџСЂРµРґС‹РґСѓС‰РёРµ РїСѓР±Р»РёРєР°С†РёРё</strong> - РІ СЃСЃС‹Р»РєР°С… Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЊСЃСЏ РїСЂРµРґС‹РґСѓС‰РёРµ РЅРѕРІРѕСЃС‚Рё.<br /><strong>РЎРІРµР¶РёРµ РїСѓР±Р»РёРєР°С†РёРё</strong> - РІ СЃСЃС‹Р»РєР°С… Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЊСЃСЏ СЃРІРµР¶РёРµ РЅРѕРІРѕСЃС‚Рё.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_date" id="linkenso_date">
-			<option value="old">Предыдущие новости</option>
-			<option value="new">Свежие новости</option>
+			<option value="old">РџСЂРµРґС‹РґСѓС‰РёРµ РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="new">РЎРІРµР¶РёРµ РЅРѕРІРѕСЃС‚Рё</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Закольцевать ссылки:</h5><span class="note large"><strong>Да</strong> - ссылки будут закольцованы, т.е. в блоке свежих статей  в самых свежих новостях будут отображены самые старые новости.<br /><strong>Нет</strong> - ссылки не будут закольцованы, т.е., если не будет найдено свежих или предыдущих ссылок, то модуль ничего не выведет.</span></td>
+		<td class="col-xs-6"><h5>Р—Р°РєРѕР»СЊС†РµРІР°С‚СЊ СЃСЃС‹Р»РєРё:</h5><span class="note large"><strong>Р”Р°</strong> - СЃСЃС‹Р»РєРё Р±СѓРґСѓС‚ Р·Р°РєРѕР»СЊС†РѕРІР°РЅС‹, С‚.Рµ. РІ Р±Р»РѕРєРµ СЃРІРµР¶РёС… СЃС‚Р°С‚РµР№  РІ СЃР°РјС‹С… СЃРІРµР¶РёС… РЅРѕРІРѕСЃС‚СЏС… Р±СѓРґСѓС‚ РѕС‚РѕР±СЂР°Р¶РµРЅС‹ СЃР°РјС‹Рµ СЃС‚Р°СЂС‹Рµ РЅРѕРІРѕСЃС‚Рё.<br /><strong>РќРµС‚</strong> - СЃСЃС‹Р»РєРё РЅРµ Р±СѓРґСѓС‚ Р·Р°РєРѕР»СЊС†РѕРІР°РЅС‹, С‚.Рµ., РµСЃР»Рё РЅРµ Р±СѓРґРµС‚ РЅР°Р№РґРµРЅРѕ СЃРІРµР¶РёС… РёР»Рё РїСЂРµРґС‹РґСѓС‰РёС… СЃСЃС‹Р»РѕРє, С‚Рѕ РјРѕРґСѓР»СЊ РЅРёС‡РµРіРѕ РЅРµ РІС‹РІРµРґРµС‚.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_ring" id="linkenso_ring">
-			<option value="yes">да</option>
-			<option value="no">нет</option>
+			<option value="yes">РґР°</option>
+			<option value="no">РЅРµС‚</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Сканировать категории:</h5><span class="note large"><strong>Все категории</strong> - в модуле будут выводиться ссылки на новости из всех категорий.<br /><strong>Текущая категория</strong> - в модуле будут выводиться ссылки на новости из той же категории, что и текущая.<br /><strong>Глобальная категория</strong> - в модуле будут выводиться ссылки на новости из самой корневой категории для текущей новости.</span></td>
+		<td class="col-xs-6"><h5>РЎРєР°РЅРёСЂРѕРІР°С‚СЊ РєР°С‚РµРіРѕСЂРёРё:</h5><span class="note large"><strong>Р’СЃРµ РєР°С‚РµРіРѕСЂРёРё</strong> - РІ РјРѕРґСѓР»Рµ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЊСЃСЏ СЃСЃС‹Р»РєРё РЅР° РЅРѕРІРѕСЃС‚Рё РёР· РІСЃРµС… РєР°С‚РµРіРѕСЂРёР№.<br /><strong>РўРµРєСѓС‰Р°СЏ РєР°С‚РµРіРѕСЂРёСЏ</strong> - РІ РјРѕРґСѓР»Рµ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЊСЃСЏ СЃСЃС‹Р»РєРё РЅР° РЅРѕРІРѕСЃС‚Рё РёР· С‚РѕР№ Р¶Рµ РєР°С‚РµРіРѕСЂРёРё, С‡С‚Рѕ Рё С‚РµРєСѓС‰Р°СЏ.<br /><strong>Р“Р»РѕР±Р°Р»СЊРЅР°СЏ РєР°С‚РµРіРѕСЂРёСЏ</strong> - РІ РјРѕРґСѓР»Рµ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЊСЃСЏ СЃСЃС‹Р»РєРё РЅР° РЅРѕРІРѕСЃС‚Рё РёР· СЃР°РјРѕР№ РєРѕСЂРЅРµРІРѕР№ РєР°С‚РµРіРѕСЂРёРё РґР»СЏ С‚РµРєСѓС‰РµР№ РЅРѕРІРѕСЃС‚Рё.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_scan" id="linkenso_scan">
-			<option value="all_cat">все категории</option>
-			<option value="same_cat">текущая категория</option>
-			<option value="global_cat">глобальная категория</option>
+			<option value="all_cat">РІСЃРµ РєР°С‚РµРіРѕСЂРёРё</option>
+			<option value="same_cat">С‚РµРєСѓС‰Р°СЏ РєР°С‚РµРіРѕСЂРёСЏ</option>
+			<option value="global_cat">РіР»РѕР±Р°Р»СЊРЅР°СЏ РєР°С‚РµРіРѕСЂРёСЏ</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Заголовко ссылки (анкор):</h5><span class="note large"><strong>Название новости</strong> - в ссылках будут выведены заголовки новостей.<br /><strong>Title новости</strong> - в ссылках будут выведены title новостей.</span></td>
+		<td class="col-xs-6"><h5>Р—Р°РіРѕР»РѕРІРєРѕ СЃСЃС‹Р»РєРё (Р°РЅРєРѕСЂ):</h5><span class="note large"><strong>РќР°Р·РІР°РЅРёРµ РЅРѕРІРѕСЃС‚Рё</strong> - РІ СЃСЃС‹Р»РєР°С… Р±СѓРґСѓС‚ РІС‹РІРµРґРµРЅС‹ Р·Р°РіРѕР»РѕРІРєРё РЅРѕРІРѕСЃС‚РµР№.<br /><strong>Title РЅРѕРІРѕСЃС‚Рё</strong> - РІ СЃСЃС‹Р»РєР°С… Р±СѓРґСѓС‚ РІС‹РІРµРґРµРЅС‹ title РЅРѕРІРѕСЃС‚РµР№.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_anchor" id="linkenso_anchor">
-			<option value="name">Название новости</option>
-			<option value="title">Title новости</option>
+			<option value="name">РќР°Р·РІР°РЅРёРµ РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="title">Title РЅРѕРІРѕСЃС‚Рё</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Атрибут title ссылок:</h5><span class="note large"><strong>Title новости</strong> - в title будут выведены title новостей.<br /><strong>Название новости</strong> - в title будут выведены заголовки новостей.</span></td>
+		<td class="col-xs-6"><h5>РђС‚СЂРёР±СѓС‚ title СЃСЃС‹Р»РѕРє:</h5><span class="note large"><strong>Title РЅРѕРІРѕСЃС‚Рё</strong> - РІ title Р±СѓРґСѓС‚ РІС‹РІРµРґРµРЅС‹ title РЅРѕРІРѕСЃС‚РµР№.<br /><strong>РќР°Р·РІР°РЅРёРµ РЅРѕРІРѕСЃС‚Рё</strong> - РІ title Р±СѓРґСѓС‚ РІС‹РІРµРґРµРЅС‹ Р·Р°РіРѕР»РѕРІРєРё РЅРѕРІРѕСЃС‚РµР№.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_title" id="linkenso_title">
-			<option value="title">title новости</option>
-			<option value="name">название новости</option>
-			<option value="empty">оставить пустым</option>
+			<option value="title">title РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="name">РЅР°Р·РІР°РЅРёРµ РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="empty">РѕСЃС‚Р°РІРёС‚СЊ РїСѓСЃС‚С‹Рј</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Изображение:</h5><span class="note large">Принцип вывода изображения из новости. При выборе изображения из дополнительного поля, необходимо ввести название нужного дополнительного поля вместо "xfield" в коде для вставки.</span></td>
+		<td class="col-xs-6"><h5>РР·РѕР±СЂР°Р¶РµРЅРёРµ:</h5><span class="note large">РџСЂРёРЅС†РёРї РІС‹РІРѕРґР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РёР· РЅРѕРІРѕСЃС‚Рё. РџСЂРё РІС‹Р±РѕСЂРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РёР· РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ РїРѕР»СЏ, РЅРµРѕР±С…РѕРґРёРјРѕ РІРІРµСЃС‚Рё РЅР°Р·РІР°РЅРёРµ РЅСѓР¶РЅРѕРіРѕ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ РїРѕР»СЏ РІРјРµСЃС‚Рѕ "xfield" РІ РєРѕРґРµ РґР»СЏ РІСЃС‚Р°РІРєРё.</span></td>
 		<td class="col-xs-6 settingstd">
 			<select class="uniform" name="linkenso_image" id="linkenso_image">
-			<option value="full_story">1-е изображение полной новости</option>
-			<option value="short_story">1-е изображение краткой новости</option>
-			<option value="xfield">значение дополнительного поля</option>
+			<option value="full_story">1-Рµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РїРѕР»РЅРѕР№ РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="short_story">1-Рµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РєСЂР°С‚РєРѕР№ РЅРѕРІРѕСЃС‚Рё</option>
+			<option value="xfield">Р·РЅР°С‡РµРЅРёРµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ РїРѕР»СЏ</option>
 			</select>
 		</td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Обрезка текста:</h5><span class="note large">Количество символов, выводимое в блоке текста.</span></td>
+		<td class="col-xs-6"><h5>РћР±СЂРµР·РєР° С‚РµРєСЃС‚Р°:</h5><span class="note large">РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРёРјРІРѕР»РѕРІ, РІС‹РІРѕРґРёРјРѕРµ РІ Р±Р»РѕРєРµ С‚РµРєСЃС‚Р°.</span></td>
 		<td class="col-xs-6 settingstd"><input class="uniform" type="text" name="linkenso_limit" id="linkenso_limit" /></td>
 		</tr><tr>
-		<td class="col-xs-6"><h5>Код для вставки в <strong>fullstory.tpl</strong></h5><span class="note large"></span></td>
+		<td class="col-xs-6"><h5>РљРѕРґ РґР»СЏ РІСЃС‚Р°РІРєРё РІ <strong>fullstory.tpl</strong></h5><span class="note large"></span></td>
 		<td class="col-xs-6 settingstd">
 			<textarea type="text" style="width:100%;height:100px;" name="linkenso_code" id="linkenso_code">{include file=\'engine/modules/linkenso.php?post_id={news-id}\'}</textarea>
 		</td>
@@ -205,7 +205,7 @@ color: #666;
 </div>
         ';
 
-        // Отображение подвала админского интерфейса
+        // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРґРІР°Р»Р° Р°РґРјРёРЅСЃРєРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР°
         echofooter();
 
 ?>
